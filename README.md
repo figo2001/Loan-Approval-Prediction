@@ -67,9 +67,7 @@ Loan-Approval-Prediction/
     ```bash
     python app.py
     ```
-
-5. Open the browser and visit `http://127.0.0.1:5000/`.
-
+    
 ## Usage
 
 1. Open the web application in your browser.
@@ -84,3 +82,7 @@ To train the loan approval model, follow these steps:
 2. Train a classification model using algorithms like Logistic Regression, Random Forest,Catboost etc.
 3. Evaluate the model on test data.
 4. Save the trained model in the `models/` directory for later use.
+
+## Screenshots
+![Screenshot 2024-10-21 at 03-12-55 Document](https://github.com/user-attachments/assets/ca7241e3-251b-44fc-b5e6-13dba5a82948)
+
