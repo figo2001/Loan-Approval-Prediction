@@ -1,0 +1,5 @@
+Flask==3.0.0
+
+scikit-learn==1.2.2  # If you are using scikit-learn for the ML model
+gunicorn==23.0.0     # For running the app on Render
+catboost==1.2.7

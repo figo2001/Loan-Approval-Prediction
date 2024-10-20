@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background-color: gray;
+        }
+        .container{
+            margin-top: 50px;
+            background-color: yellowgreen;
+        }
+        .form-container{
+            background-color: burlywood;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+        .result{
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            background-color: whitesmoke;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="text-center">Loan Approval</h1>
+
+        
+        <div class="form-container">
+            <form action="/predict" method="post">
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="person_age">Person Age</label>
+                        <input type="number" class="form-control" id="person_age" name="person_age">
+                    </div>
+                
+                
+                    <div class="form-group col-md-6">
+                        <label for="person_income">Person Income</label>
+                        <input type="number" class="form-control" id="person_income" name="person_income">
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="person_home_ownership">Person Home Ownership</label>
+                        <input type="number" class="form-control" id="person_home_ownership" name="person_home_ownership">
+                    </div>
+                
+                    <div class="form-group col-md-6">
+                        <label for="person_emp_length">Person Emp Length </label>
+                        <input type="number" class="form-control" id="person_emp_length" name="person_emp_length">
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="loan_intent">Loan Intent</label>
+                        <input type="number" class="form-control" id="loan_intent" name="loan_intent">
+                    </div>
+                
+                    <div class="form-group col-md-6">
+                        <label for="loan_grade">Loan Grade</label>
+                        <input type="number" class="form-control" id="loan_grade" name="loan_grade">
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="loan_amnt">Loan Amount</label>
+                        <input type="number" class="form-control" id="loan_amnt" name="loan_amnt">
+                    </div>
+                
+                    <div class="form-group col-md-6">
+                        <label for="loan_int_rate">Loan Interest Rate</label>
+                        <input type="number" class="form-control" id="loan_int_rate" name="loan_int_rate">
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="loan_percent_income">Loan Percent Income</label>
+                        <input type="number" class="form-control" id="loan_percent_income" name="loan_percent_income">
+                    </div>
+                
+                    <div class="form-group col-md-6">
+                        <label for="cb_person_default_on_file">CB Person Default on File</label>
+                        <input type="number" class="form-control" id="cb_person_default_on_file" name="cb_person_default_on_file">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="cb_person_cred_hist_length">CB Person Cred Hist Length</label>
+                        <input type="number" class="form-control" id="cb_person_cred_hist_length" name="cb_person_cred_hist_length">
+                    </div>
+                
+                </div>
+
+
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+
+            </form>
+        </div>
+
+        {% if prediction %}
+
+        <div class="result">
+            <h3>The Loan Approval Status will be will be</h3>
+            <p><strong>{{prediction}}</strong></p>
+
+        </div>
+        {% endif %}
+
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
